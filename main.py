@@ -29,17 +29,9 @@ import math, operator
 import time
 
 #Need to add links for Group
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://discussion/6064a900ad7573e041619495" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/all/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/items/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/asks/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/discussions/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/lists/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/books" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/tvandmovies" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/podcasts" com.Likewise.apps.Radiant
+
 #adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://inbox" com.Likewise.apps.Radiant
+
 
 deepLinks = [
 	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/Shows/90257" com.Likewise.apps.Radiant', "itemControl.jpg"],
