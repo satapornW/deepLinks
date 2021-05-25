@@ -87,7 +87,7 @@ def main():
 		time.sleep(0.5)
 		subprocess.call('adb pull /sdcard/test.png', shell=True)
 
-		control = Image.open(link[1])
+		control = Image.open("control/" + link[1])
 		testimage = Image.open("test.png")
 
 		toAppend = []
