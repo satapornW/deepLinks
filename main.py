@@ -34,21 +34,22 @@ import time
 
 
 deepLinks = [
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/Shows/90257" com.Likewise.apps.Radiant', "itemControl.jpg"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://listdetail/5949a65d7e95cb26ac91b9c3/5f5be8ff85d41e001de30379" com.Likewise.apps.Radiant', "listControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://askdetail/5f2b3f302d9c4300248a576d" com.Likewise.apps.Radiant', "askControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://profiledetail/thuc7.test" com.Likewise.apps.Radiant', "profileControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://saves/all" com.Likewise.apps.Radiant', "savesControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://discussion/6064a900ad7573e041619495" com.Likewise.apps.Radiant', "discussionControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/all/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupDetailsControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/items/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupItemControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/asks/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupAskControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/discussions/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupDiscussionControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/lists/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupListsControl.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/books" com.Likewise.apps.Radiant', "myBooksGroups.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/tvandmovies" com.Likewise.apps.Radiant', "myTVMoviesGroups.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/podcasts" com.Likewise.apps.Radiant', "myPodcastsGroups.png"],
-	['adb shell am start -W -a android.intent.action.VIEW -d "kismet://inbox" com.Likewise.apps.Radiant',"inboxControl.png"]
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/Shows/90257" com.Likewise.apps.Radiant', "itemControl.jpg"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://listdetail/5949a65d7e95cb26ac91b9c3/5f5be8ff85d41e001de30379" com.Likewise.apps.Radiant', "listControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://askdetail/5f2b3f302d9c4300248a576d" com.Likewise.apps.Radiant', "askControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://profiledetail/thuc7.test" com.Likewise.apps.Radiant', "profileControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://saves/all" com.Likewise.apps.Radiant', "savesControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://discussion/6064a900ad7573e041619495" com.Likewise.apps.Radiant', "discussionControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/all/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupDetailsControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/items/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupItemControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/asks/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupAskControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/discussions/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupDiscussionControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/lists/601ba7f3349f824de4f5f473" com.Likewise.apps.Radiant', "groupListsControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/books" com.Likewise.apps.Radiant', "myBooksGroups.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/tvandmovies" com.Likewise.apps.Radiant', "myTVMoviesGroups.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/podcasts" com.Likewise.apps.Radiant', "myPodcastsGroups.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://inbox" com.Likewise.apps.Radiant',"inboxControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite" com.Likewise.apps.Radiant', "inviteControl.png"]
 	]
 
 def rmsdiff(im1, im2):
