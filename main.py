@@ -30,7 +30,8 @@ import time
 
 #Need to add links for Group
 
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "kismet://today?sms=true" com.Likewise.apps.Radiant
+
 
 
 deepLinks = [
@@ -49,7 +50,8 @@ deepLinks = [
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/tvandmovies" com.Likewise.apps.Radiant', "myTVMoviesGroups.png"],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/podcasts" com.Likewise.apps.Radiant', "myPodcastsGroups.png"],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://inbox" com.Likewise.apps.Radiant',"inboxControl.png"],
-		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite" com.Likewise.apps.Radiant', "inviteControl.png"]
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite" com.Likewise.apps.Radiant', "inviteControl.png"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://today?sms=true" com.Likewise.apps.Radiant', 'todayControl.png']
 	]
 
 def rmsdiff(im1, im2):
