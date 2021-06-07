@@ -30,7 +30,7 @@ import time
 
 #Need to add links for Group
 
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://today?sms=true" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemComments/Shows/90257 " com.Likewise.apps.Radiant
 
 
 
@@ -77,7 +77,7 @@ def rmsdiff(im1, im2):
 
 def main():
 
-	log = []
+	logForResults = []
 
 	#open item
 	for link in deepLinks:
@@ -104,9 +104,9 @@ def main():
 		else:
 			toAppend.append("rmsdiff value is within threshold")
 
-		log.append(toAppend)
+		logForResults.append(toAppend)
 
-	print log
+	print (logForResults)
 
 main()
 
