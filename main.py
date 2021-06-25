@@ -27,6 +27,7 @@ import subprocess
 from PIL import ImageChops, Image
 import math, operator
 import time
+import re
 
 #Need to add links for Group
 
@@ -34,7 +35,11 @@ import time
 #https://on.likewise.com/comedy-club
 #adb shell am start -a android.intent.action.VIEW -d https://on.likewise.com/top-secret-top-gun-club
 #"kismet://quiz/5fdd2f33ab125a00370e32c3"
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://quiz/5fdd2f33ab125a00370e32c3" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/books" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/tvandmovies" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/podcasts" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/tags" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/people" com.Likewise.apps.Radiant
 
 
 deepLinks = [
@@ -52,11 +57,17 @@ deepLinks = [
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/books" com.Likewise.apps.Radiant', "myBooksGroups.png"],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/tvandmovies" com.Likewise.apps.Radiant', "myTVMoviesGroups.png"],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://groups/mygroups/podcasts" com.Likewise.apps.Radiant', "myPodcastsGroups.png"],
-		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://inbox" com.Likewise.apps.Radiant',"inboxControl.png"],
-		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite" com.Likewise.apps.Radiant', "inviteControl.png"],
-		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite/contacts" com.Likewise.apps.Radiant', "inviteControl.png"],
+		# ['adb shell am start -W -a android.intent.action.VIEW -d "kismet://inbox" com.Likewise.apps.Radiant',"inboxControl.png"],
+		# ['adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite" com.Likewise.apps.Radiant', "inviteControl.png"],
+		# ['adb shell am start -W -a android.intent.action.VIEW -d "kismet://invite/contacts" com.Likewise.apps.Radiant', "inviteControl.png"],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://today?sms=true" com.Likewise.apps.Radiant', 'todayControl.png'],
-		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://quiz/5fdd2f33ab125a00370e32c3" com.Likewise.apps.Radiant', 'quizControl.png']
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://quiz/5fdd2f33ab125a00370e32c3" com.Likewise.apps.Radiant', 'quizControl.png'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/books" com.Likewise.apps.Radiant', 'discoverBooksControl.png'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/tvandmovies" com.Likewise.apps.Radiant', 'discoverTVMoviesControl.png'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/podcasts" com.Likewise.apps.Radiant', 'discoverPodcastsControl.png'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/tags" com.Likewise.apps.Radiant','discoverTagsControl.png'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/people" com.Likewise.apps.Radiant', 'discoverPeopleControl.png']
+
 	]
 
 def rmsdiff(im1, im2):
@@ -79,7 +90,6 @@ def rmsdiff(im1, im2):
 	rms = math.sqrt(sum_of_squares/float(im1.size[0] * im1.size[1]))
 	return rms
 
-
 def main():
 
 	logForResults = []
@@ -100,8 +110,13 @@ def main():
 
 		toAppend = []
 
-		result = rmsdiff(control, testimage)
-		toAppend.append(result)
+		result = rmsdiff(control, testimage)		
+
+		cleanDeepLink = re.search('-d(.*?)com', link[0])
+		#print(result.group(1))
+
+		toAppend.append(cleanDeepLink.group(1))
+		toAppend.append(format(result, '.2f'))
 		# print("rmsdiff value:", result)
 
 		if (result > 100.0):
@@ -111,6 +126,7 @@ def main():
 
 		logForResults.append(toAppend)
 
+	#Sorted the return low to high
 	print (logForResults)
 
 main()
