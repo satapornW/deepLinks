@@ -40,11 +40,25 @@ import re
 #adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/podcasts" com.Likewise.apps.Radiant
 #adb shell am start -W -a android.intent.action.VIEW -d "kismet://discover/tags" com.Likewise.apps.Radiant
 #adb shell am start -W -a android.intent.action.VIEW -d "kismet://event/60d625b823fff2001e289dc6" com.Likewise.apps.Radiant
-#adb shell am start -W -a android.intent.action.VIEW -d "kismet://discussions/books" com.Likewise.apps.Radiant
+#adb shell am start -W -a android.intent.action.VIEW -d "likewise://club/all/607a2d95279c3d0d00452c5c" com.Likewise.apps.Likewise
 
+#adb shell am start -W -a android.intent.action.VIEW -d "nflx://www.netflix.com/title/70143836?source=topshelf" com.netflix.ninja/.MainActivity
+#6103131c98e70000363aa26f adb shell am start -W -a android.intent.action.VIEW -d "kismet://club/list/6103131c98e70000363aa26f" com.Likewise.apps.Radiant
+
+#[adb command, control image in folder]
+
+"""
+Need to do 
+adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/movies/436969" com.Likewise.apps.Radiant
+adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/books/Nbj9CwAAQBAJ" com.Likewise.apps.Radiant
+adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/podcasts/359290938" com.Likewise.apps.Radiant
+"""
 
 deepLinks = [
-		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/Shows/90257" com.Likewise.apps.Radiant', "itemControl.jpg"],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/Shows/90257" com.Likewise.apps.Radiant', 'itemControl.jpg'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/movies/436969" com.Likewise.apps.Radiant','movieControl.png'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/books/Nbj9CwAAQBAJ" com.Likewise.apps.Radiant', 'bookControl.png'],
+		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://itemdetail/podcasts/359290938" com.Likewise.apps.Radiant', 'podcastControl.png'],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://listdetail/5949a65d7e95cb26ac91b9c3/5f5be8ff85d41e001de30379" com.Likewise.apps.Radiant', "listControl.png"],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://askdetail/5f2b3f302d9c4300248a576d" com.Likewise.apps.Radiant', "askControl.png"],
 		['adb shell am start -W -a android.intent.action.VIEW -d "kismet://profiledetail/thuc7.test" com.Likewise.apps.Radiant', "profileControl.png"],
