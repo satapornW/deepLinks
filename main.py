@@ -145,7 +145,8 @@ def main():
 		logForResults.append(toAppend)
 
 	#Sorted the return low to high
-	print (logForResults)
+	for j in logForResults:
+		print(j)
 
 main()
 
